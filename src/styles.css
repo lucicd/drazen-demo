@@ -1,0 +1,9 @@
+/* vh-60 and min-w-50 are missing in Bootstrap 5.3 */
+
+.vh-60 {
+  height: 60vh !important;
+}
+
+.min-w-50 {
+  min-width: 50% !important;
+}
