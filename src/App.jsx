@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  // createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 import DemoCard from "./shared/DemoCard";
 import ImageCarousel from "./image-carousel/ImageCarousel";
@@ -12,13 +16,15 @@ function card(component, title) {
   return <DemoCard title={title}>{component}</DemoCard>;
 }
 
-const router = createBrowserRouter([
+// const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: card(<HomePage />, "Home") },
+      { path: "/drazen-demo/", element: card(<HomePage />, "Home") },
       {
         path: "/image-carousel",
         element: card(<ImageCarousel />, "Image Carousel"),

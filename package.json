@@ -2,10 +2,10 @@
   "name": "drazen-demo",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://lucicd.github.io/drazen-demo",
+  "homepage": "https://lucicd.github.io/drazen-demo/#",
   "type": "module",
   "scripts": {
-    "predeploy": "vite build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",

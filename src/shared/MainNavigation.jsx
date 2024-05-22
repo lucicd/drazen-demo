@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function MainNavigation() {
+  const navButton = useRef(null);
+  const linksContainerRef = useRef(null);
+
+  function collapseNav() {
+    navButton.current.classList.add("collapsed");
+    linksContainerRef.current.classList.remove("show");
+  }
+
   return (
     <header>
       <nav
@@ -8,10 +17,11 @@ export default function MainNavigation() {
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
+          <Link onClick={collapseNav} to="/" className="navbar-brand">
             Drazen&apos;s Demos
           </Link>
           <button
+            ref={navButton}
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -22,18 +32,34 @@ export default function MainNavigation() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div
+            ref={linksContainerRef}
+            className="collapse navbar-collapse"
+            id="navbarNavAltMarkup"
+          >
             <div className="navbar-nav">
-              <Link to="/" className="nav-link">
+              <NavLink onClick={collapseNav} to="/" className="nav-link">
                 Home
-              </Link>
-              <Link to="/accordion" className="nav-link">
+              </NavLink>
+              <NavLink
+                onClick={collapseNav}
+                to="/accordion"
+                className="nav-link"
+              >
                 Accordion
-              </Link>
-              <Link to="/image-carousel" className="nav-link">
+              </NavLink>
+              <NavLink
+                onClick={collapseNav}
+                to="/image-carousel"
+                className="nav-link"
+              >
                 Image Carousel
-              </Link>
-              <Link to="/quote-generator" className="nav-link">
+              </NavLink>
+              <Link
+                onClick={collapseNav}
+                to="/quote-generator"
+                className="nav-link"
+              >
                 Quote Generator
               </Link>
             </div>
