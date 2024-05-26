@@ -38,30 +38,56 @@ export default function MainNavigation() {
             id="navbarNavAltMarkup"
           >
             <div className="navbar-nav">
-              <NavLink onClick={collapseNav} to="/" className="nav-link">
+              <NavLink
+                onClick={collapseNav}
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "nav-link border border-white" : "nav-link"
+                }
+                end
+              >
                 Home
               </NavLink>
               <NavLink
                 onClick={collapseNav}
                 to="/accordion"
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? "nav-link border border-white" : "nav-link"
+                }
+                end
               >
                 Accordion
               </NavLink>
               <NavLink
                 onClick={collapseNav}
                 to="/image-carousel"
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? "nav-link border border-white" : "nav-link"
+                }
+                end
               >
                 Image Carousel
               </NavLink>
-              <Link
+              <NavLink
                 onClick={collapseNav}
                 to="/quote-generator"
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? "nav-link border border-white" : "nav-link"
+                }
+                end
               >
                 Quote Generator
-              </Link>
+              </NavLink>
+              <NavLink
+                onClick={collapseNav}
+                to="/shopping-list"
+                className={({ isActive }) =>
+                  isActive ? "nav-link border border-white" : "nav-link"
+                }
+                end
+              >
+                Shopping List
+              </NavLink>
             </div>
           </div>
         </div>

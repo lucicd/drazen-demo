@@ -11,6 +11,7 @@ import QuoteGenerator from "./quote-generator/QuoteGenerator";
 import HomePage from "./HomePage";
 import RootLayout from "./shared/RootLayout";
 import ErrorPage from "./shared/ErrorPage";
+import ShoppingListDemo from "./shopping-list/ShoppingListDemo";
 
 function card(component, title) {
   return <DemoCard title={title}>{component}</DemoCard>;
@@ -36,6 +37,10 @@ const router = createHashRouter([
       {
         path: "/quote-generator",
         element: card(<QuoteGenerator />, "Quote Generator"),
+      },
+      {
+        path: "/shopping-list",
+        element: card(<ShoppingListDemo />, "Shopping List"),
       },
     ],
   },
