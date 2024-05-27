@@ -88,6 +88,16 @@ export default function MainNavigation() {
               >
                 Shopping List
               </NavLink>
+              <NavLink
+                onClick={collapseNav}
+                to="/bmi-calculator"
+                className={({ isActive }) =>
+                  isActive ? "nav-link border border-white" : "nav-link"
+                }
+                end
+              >
+                BMI Calculator
+              </NavLink>
             </div>
           </div>
         </div>
